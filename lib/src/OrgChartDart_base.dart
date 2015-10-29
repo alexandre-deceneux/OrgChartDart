@@ -20,10 +20,18 @@ class OrgChartDart {
   }
 
   void  drawChart(){
+
+    print("Starting data table");
+
     var data = new JsObject(context["google"]["visualization"]["DataTable"], []);
+
+    print("Starting addColumn serie");
+
     data.callMethod("addColumn", ["string", "Name"]);
     data.callMethod("addColumn", ["string", "Manager"]);
     data.callMethod("addColumn", ["string", "ToolTip"]);
+
+    print("Starting addRows serie");
 
     data.callMethod("addRows", [
       [
@@ -35,9 +43,19 @@ class OrgChartDart {
       ]
     ]);
 
+    print("Get div chart");
+
     var divChart = new JsObject(context["document"]["getElementById"], ["chart_div"]);
+
+    print("Get chart obj");
+
     chart = new JsObject(context["google"]["visualization"]["OrgChart"], [divChart]);
+
+    print("draw chart");
+
     chart.callMethod("draw", [data, {'allowHtml':true}]);
+
+    print("ending draw function");
   }
 
 }
