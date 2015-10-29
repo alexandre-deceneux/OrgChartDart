@@ -16,10 +16,13 @@ class OrgChartDart {
   void  load(){
     var packages = context["packages"];
     new JsObject(context["google"]["load"], ["visualization", "1", {packages:["orgchart"]}]);
+
+    print("Call closure");
+
     new JsObject(context["google"]["setOnLoadCallback"], [drawChart]);
   }
 
-  void  drawChart(){
+  void  drawChart([event]){
 
     print("Starting data table");
 
