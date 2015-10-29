@@ -13,15 +13,20 @@ class OrgChartDart {
   JsObject  chart;
   String    targetId;
 
-  OrgChartDart([this.targetId = "chart_div"]);
+  OrgChartDart([this.targetId = "chart_div"]){
+    print("ORGACHARTDART: new chart");
+  }
 
   void  load(){
+    print("ORGACHARTDART: load chart");
     var packages = context["packages"];
     new JsObject(context["google"]["load"], ["visualization", "1", {packages:["orgchart"]}]);
     new JsObject(context["google"]["setOnLoadCallback"], [drawChart]);
   }
 
   void  drawChart([event]){
+    print("ORGACHARTDART: Draw chart");
+
     var data = new JsObject(context["google"]["visualization"]["DataTable"], []);
     data.callMethod("addColumn", ["string", "Name"]);
     data.callMethod("addColumn", ["string", "Manager"]);
