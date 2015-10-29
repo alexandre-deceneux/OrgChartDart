@@ -20,7 +20,10 @@ class OrgChartDart {
     ['Bob', 'Alice', 'Bob Sponge']
   ];
 
-  OrgChartDart({this.targetId, this.tree});
+  OrgChartDart(String targetId, var tree){
+    this.targetId = targetId;
+    this.tree = tree;
+  }
 
   void  load(){
     var packages = context["packages"];
