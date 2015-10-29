@@ -1,6 +1,6 @@
 # OrgChartDart
 
-A library for Dart developers. It is awesome.
+A organizational chart version from Google Charts for Dart.
 
 ## Usage
 
@@ -9,7 +9,7 @@ A simple usage example:
     import 'package:OrgChartDart/OrgChartDart.dart';
 
     main() {
-      var awesome = new Awesome();
+      var OrgChartDart = new OrgChartDart();
     }
 
 ## Features and bugs
