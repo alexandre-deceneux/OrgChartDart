@@ -11,9 +11,14 @@ class OrgChartDart {
 
   JsObject chart;
 
-  OrgChartDart();
+  OrgChartDart(){
+    print("New Org Chart");
+  }
 
   void  load(){
+
+    print("Load Function");
+
     var packages = context["packages"];
     new JsObject(context["google"]["load"], ["visualization", "1", {packages:["orgchart"]}]);
 
