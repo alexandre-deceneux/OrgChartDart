@@ -9,7 +9,8 @@ A simple usage example:
     import 'package:OrgChartDart/OrgChartDart.dart';
 
     main() {
-      var OrgChartDart = new OrgChartDart();
+      var chart = new OrgChartDart("my_orgchart_div");
+      chart.load();
     }
 
 ## Features and bugs
